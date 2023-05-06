@@ -10,6 +10,10 @@ const Header = () => {
       className='md:min-h-[440px] sm:min-h-[336px] min-h-[236px] md:mb-8 sm:mb-6 mb-4 bg '
       style={{
         backgroundImage: `url(${bg.src})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))'
       }}
     >
       <div className="sm:hidden px-5 pt-5 flex flex-row items-center justify-between">
