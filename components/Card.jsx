@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import DotVector from '../assets/DotVector.png';
+import Link from 'next/link'
 import Visibility from '../assets/visibility.png';
 import ViewVector from '../assets/viewVector.png';
 import LocationVector from '../assets/locationVector.png';
@@ -8,6 +8,8 @@ import LocationVector from '../assets/locationVector.png';
 
 
 const Card = ({bgImg, contentType, contentHeading, mainContent, ownerImg, ownerName, GenericVector, genericText, locationText, buttonText, buttonColor}) => {
+    const [menuToggler, setMenuToggler] = useState(false)
+
   return (
     <div className='bg-white border border-[#E0E0E0] border-solid rounded lg:max-w-[692px] max-w-full h-auto mb-4'>
         {bgImg 
@@ -22,14 +24,36 @@ const Card = ({bgImg, contentType, contentHeading, mainContent, ownerImg, ownerN
 
             <span className="w-full flex justify-between items-start mb-3">
                 <p className="md:max-w-[580px] sm:max-w-[460px] max-w-[280px] font-semibold sm:text-[22px] text-base">{contentHeading}</p>
-                <span className="inline-block mt-2">
-                    <Image
-                        src={DotVector}
-                        alt="/"
-                        width={20}
-                        height={6}
-                        className="block cursor-pointer"
-                    />
+                <span className="inline-block relative">
+                    <button 
+                        onMouseEnter={() => setMenuToggler(!menuToggler)}
+                        className="inline-flex items-center p-2 mb-1 text-sm font-medium text-center bg-white rounded-[4px] hover:bg-[#BFC0C0] text-black" type="button"
+                    > 
+                        <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                    </button>
+
+                    <div 
+                        className={`z-10 bg-white divide-y divide-gray-100 rounded-[4px] shadow w-[160px] 
+                        ${menuToggler ? 'block' : 'hidden'} absolute right-0`}
+                    >
+                        <ul className="py-2">
+                            <li>
+                                <Link href="#" className="block px-4 py-2 text-black text-sm">
+                                    Edit
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#" className="block px-4 py-2 text-black text-sm">
+                                    Report
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#" className="block px-4 py-2 text-black text-sm">
+                                    Option 3
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </span>
             </span>
 
