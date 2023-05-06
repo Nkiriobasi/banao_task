@@ -6,7 +6,13 @@ import BackArrow from '../assets/arrow_back.png'
 const Header = () => {
   return (
     <header 
-      className='md:min-h-[440px] sm:min-h-[336px] min-h-[236px] md:mb-8 sm:mb-6 mb-4 bg'
+      className='md:min-h-[440px] sm:min-h-[336px] min-h-[236px] md:mb-8 sm:mb-6 mb-4 bg bg_image'
+      style={{
+        backgroundImage: `url("../assets/arrow_back.png")`,
+        height: '100vh',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}
     >
       <div className="sm:hidden px-5 pt-5 flex flex-row items-center justify-between">
         <Image
