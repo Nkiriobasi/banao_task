@@ -7,7 +7,7 @@ import bg from '../public/Rectangle.png';
 const Header = () => {
   return (
     <header 
-      className='md:min-h-[440px] sm:min-h-[336px] min-h-[236px] md:mb-8 sm:mb-6 mb-4 bg '
+      className='md:min-h-[440px] sm:min-h-[336px] min-h-[236px] md:mb-8 sm:mb-6 mb-4 bg_gradient'
       style={{
         backgroundImage: `url(${bg.src})`,
         backgroundSize: 'cover',
