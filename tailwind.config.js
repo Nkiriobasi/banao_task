@@ -5,11 +5,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'bg_image' : "url('../public/Rectangle.png')",
-      }
-    },
+    extend:{},
   },
   plugins: [],
 }
