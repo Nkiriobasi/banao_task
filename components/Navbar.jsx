@@ -8,7 +8,7 @@ import MobileToggle from '../assets/nav_mobile.png';
 
 const Navbar = () => {
   return (
-    <nav className={`bg-white w-full h-[72px] xl:px-20 px-8 py-2.5 fixed right-0 left-0 
+    <nav className={`bg-white w-full h-[72px] xl:px-20 sm:px-8 px-5 py-2.5 fixed right-0 left-0 
         top-0 z-30 flex items-center justify-between border-b border-solid border-[#E0E0E0]`}
     >
         <div className='w-auto h-auto'>

@@ -12,6 +12,7 @@ import RonalJones from '../assets/ronal_jones.png';
 import CalenderVector from '../assets/calenderVector.png';
 import JobVector from '../assets/JobVector.png';
 import JosephGray from '../assets/joseph_gray.png';
+import DownArrowIcon from '../assets/down_arrow_icon.png';
 
 import Card from '../components/Card';
 import LocationEditField from './LocationEditField';
@@ -21,6 +22,8 @@ import SignIn from './SignInModal';
 
 const TabView = () => {
     const [toggle, setToggle] = useState(1);
+    const [buttonToggler, setButtonToggler] = useState(false)
+
 
     const updateToggle = (id) => {
         setToggle(id)
@@ -31,37 +34,37 @@ const TabView = () => {
         <div className={`flex items-center justify-between border-b border-solid 
             border-[#E0E0E0] py-3 mb-7`}
         >
-            <ul className='w-auto md:flex items-center hidden'>
+            <ul className='w-auto sm:flex hidden items-center'>
                 <li 
-                    className={`mr-5 font-medium text-base cursor-pointer 
+                    className={`mr-5 font-medium md:text-base text-sm cursor-pointer 
                     ${toggle === 1 ? 'text-black' : 'text-[#8A8A8A]'}`} 
                     onClick={() => updateToggle(1)}
                 >
                     All Posts(32)
                 </li>
                 <li 
-                    className={`mr-5 font-medium text-base cursor-pointer 
+                    className={`mr-5 font-medium md:text-base text-sm cursor-pointer 
                     ${toggle === 2 ? 'text-black' : 'text-[#8A8A8A]'}`} 
                     onClick={() => updateToggle(2)}
                 >
                     Article
                 </li>
                 <li 
-                    className={`mr-5 font-medium text-base cursor-pointer 
+                    className={`mr-5 font-medium md:text-base text-sm cursor-pointer 
                     ${toggle === 3 ? 'text-black' : 'text-[#8A8A8A]'}`} 
                     onClick={() => updateToggle(3)}
                 >
                     Event
                 </li>
                 <li 
-                    className={`mr-5 font-medium text-base cursor-pointer 
+                    className={`mr-5 font-medium md:text-base text-sm cursor-pointer 
                     ${toggle === 4 ? 'text-black' : 'text-[#8A8A8A]'}`} 
                     onClick={() => updateToggle(4)}
                 >
                     Education
                 </li>
                 <li 
-                    className={`mr-5 font-medium text-base cursor-pointer 
+                    className={`mr-5 font-medium md:text-base text-sm cursor-pointer 
                     ${toggle === 5 ? 'text-black' : 'text-[#8A8A8A]'}`} 
                     onClick={() => updateToggle(5)}
                 >
@@ -69,8 +72,10 @@ const TabView = () => {
                 </li>
             </ul>
 
+            <p className='sm:hidden block text-sm text-black font-medium'>Posts(32)</p>
+
             <div className="flex items-center">
-                <button className={`flex items-center py-2 px-3 bg-[#EDEEF0] mr-4 rounded`}>
+                <button className={`md:flex hidden items-center py-2 px-3 bg-[#EDEEF0] mr-4 rounded cursor-pointer`}>
                     <p className='mr-2 text-black font-medium text-sm'>Write a Post</p>
                     <Image
                         src={DownArrow}
@@ -81,6 +86,46 @@ const TabView = () => {
                 </button>
                 <CreateAccount />
                 {/* <SignIn /> */}
+
+                <span className="inline-block relative">
+                    <button 
+                        onClick={() => setButtonToggler(!buttonToggler)}
+                        className={`sm:hidden flex items-center justify-between py-2 px-2 bg-[#F1F3F5] space-x-3 rounded cursor-pointer`} 
+                        type="button"
+                    > 
+                        <p className='text-sm text-[#212529] font-medium'>Filter: All</p>
+
+                        <Image
+                            src={DownArrowIcon}
+                            alt="/"
+                            width={8.33}
+                            height={4.17}
+                        />
+                    </button>
+
+                    <div 
+                        className={`z-10 bg-white divide-y divide-gray-100 rounded-[4px] shadow w-auto 
+                        ${buttonToggler ? 'block' : 'hidden'} absolute right-0`}
+                    >
+                        <ul className="py-2">
+                            <li className="block px-4 py-2 text-black text-sm"> 
+                                Posts(32)
+                            </li>
+                            <li className="block px-4 py-2 text-black text-sm"> 
+                                Article
+                            </li>
+                            <li className="block px-4 py-2 text-black text-sm"> 
+                                Event
+                            </li>
+                            <li className="block px-4 py-2 text-black text-sm"> 
+                                Education
+                            </li>
+                            <li className="block px-4 py-2 text-black text-sm"> 
+                                Job
+                            </li>
+                        </ul>
+                    </div>
+                </span>
             </div>
         </div>
         
