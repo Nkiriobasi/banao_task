@@ -7,7 +7,7 @@ import mobileCancelVector from '../assets/mobileTimesVector.png';
 import FacebookIcon from '../assets/facebook_icon.png';
 import GoogleIcon from '../assets/google_icon.png';
 import ModalImg from '../assets/modal_Img.png';
-import WhiteAddVector from '../assets/hite_addVector.png';
+import WhiteAddVector from '../assets/white_addVector.png';
 
 
 function CreateAccount() {
