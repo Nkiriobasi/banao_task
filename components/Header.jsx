@@ -13,7 +13,6 @@ const Header = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))'
       }}
     >
       <div className="sm:hidden px-5 pt-5 flex flex-row items-center justify-between">
