@@ -8,7 +8,7 @@ import DownArrow from '../assets/down_arrow_icon.png';
 
 const ProfilePanel = () => {
   return (
-    <section className='w-auto space-x-3 md:inline-flex items-center hidden'>
+    <section className='w-auto space-x-3 md:inline-flex items-center hidden cursor-pointer'>
         <Image
             src={ProfileImg}
             alt="/"

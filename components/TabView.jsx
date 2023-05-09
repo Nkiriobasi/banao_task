@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 import DownArrow from '../assets/down_arrow_icon.png';
-import JoinGroup from '../assets/joinGroupVector.png';
 import ArticleBg from '../assets/Article_bg.png';
 import SarthaKamra from '../assets/sarthak_kamra.png';
 import SarahWest from '../assets/sarah_west.png';
@@ -16,7 +15,6 @@ import DownArrowIcon from '../assets/down_arrow_icon.png';
 
 import Card from '../components/Card';
 import LocationEditField from './LocationEditField';
-import CreateAccount from './CreateAccountModal';
 import SignIn from './SignInModal';
 
 
@@ -30,9 +28,9 @@ const TabView = () => {
     }
 
   return (
-    <div className='max-w-[1040px] xl:px-0 sm:px-8 px-5 mx-auto'>
+    <section className='max-w-[1040px] xl:px-0 sm:px-8 px-5 mx-auto'>
         <div className={`flex items-center justify-between border-b border-solid 
-            border-[#E0E0E0] py-3 mb-7`}
+            border-[#E0E0E0] py-3 mb-7 overflow-y-auto sticky top-[72px] z-[70] bg-white`}
         >
             <ul className='w-auto sm:flex hidden items-center'>
                 <li 
@@ -84,7 +82,7 @@ const TabView = () => {
                         height={4.58}
                     />
                 </button>
-                {/* <CreateAccount /> */}
+
                 <SignIn />
 
                 <span className="inline-block relative">
@@ -130,7 +128,7 @@ const TabView = () => {
         </div>
         
         <div className="w-full relative">
-            <div className="">
+            <div>
                 <div className={toggle === 1 ? 'block' : 'hidden'}>
                     <Card 
                         bgImg={ArticleBg} 
@@ -311,7 +309,7 @@ const TabView = () => {
 
             <LocationEditField />
         </div>
-    </div>
+    </section>
   )
 }
 
