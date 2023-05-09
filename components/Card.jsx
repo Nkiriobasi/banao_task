@@ -26,7 +26,7 @@ const Card = ({bgImg, contentType, contentHeading, mainContent, ownerImg, ownerN
                 <p className="md:max-w-[580px] sm:max-w-[460px] max-w-[280px] font-semibold sm:text-[22px] text-base">{contentHeading}</p>
                 <span className="inline-block relative">
                     <button 
-                        onMouseEnter={() => setMenuToggler(!menuToggler)}
+                        onClick={() => setMenuToggler(!menuToggler)}
                         className="inline-flex items-center p-2 mb-1 text-sm font-medium text-center bg-white rounded-[4px] hover:bg-[#BFC0C0] text-black" type="button"
                     > 
                         <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
