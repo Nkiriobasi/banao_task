@@ -84,8 +84,8 @@ const TabView = () => {
                         height={4.58}
                     />
                 </button>
-                <CreateAccount />
-                {/* <SignIn /> */}
+                {/* <CreateAccount /> */}
+                <SignIn />
 
                 <span className="inline-block relative">
                     <button 
