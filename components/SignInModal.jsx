@@ -27,7 +27,7 @@ function SignIn() {
     <>
         <div className='w-auto'>
             <button 
-                className={`flex items-center py-2 px-3 bg-[#2F6CE5] rounded`}
+                className={`sm:flex hidden items-center py-2 px-3 bg-[#2F6CE5] rounded`}
                 onClick={() => setShowModal(true)}
             >
                 <Image

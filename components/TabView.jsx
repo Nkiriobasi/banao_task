@@ -30,7 +30,7 @@ const TabView = () => {
   return (
     <section className='max-w-[1040px] xl:px-0 sm:px-8 px-5 mx-auto'>
         <div className={`flex items-center justify-between border-b border-solid 
-            border-[#E0E0E0] py-3 mb-7 overflow-y-auto sticky top-[72px] z-[70] bg-white`}
+            border-[#E0E0E0] py-3 mb-7 sticky top-[72px] z-[70] bg-white`}
         >
             <ul className='w-auto sm:flex hidden items-center'>
                 <li 
@@ -85,7 +85,7 @@ const TabView = () => {
 
                 <SignIn />
 
-                <span className="inline-block relative">
+                <span className="block relative">
                     <button 
                         onClick={() => setButtonToggler(!buttonToggler)}
                         className={`sm:hidden flex items-center justify-between py-2 px-2 bg-[#F1F3F5] space-x-3 rounded cursor-pointer`} 
@@ -102,7 +102,7 @@ const TabView = () => {
                     </button>
 
                     <div 
-                        className={`z-10 bg-white divide-y divide-gray-100 rounded-[4px] shadow w-auto 
+                        className={`z-50 bg-white divide-y divide-gray-100 rounded-[4px] shadow w-auto 
                         ${buttonToggler ? 'block' : 'hidden'} absolute right-0`}
                     >
                         <ul className="py-2">
