@@ -7,8 +7,22 @@ import LocationVector from '../assets/locationVector.png';
 
 
 
-const Card = ({bgImg, contentType, contentHeading, mainContent, ownerImg, ownerName, GenericVector, genericText, locationText, buttonText, buttonColor}) => {
+const Card = (props) => {
     const [menuToggler, setMenuToggler] = useState(false)
+
+    const {
+        bgImg,
+        contentType,
+        contentHeading,
+        mainContent,
+        ownerImg,
+        ownerName,
+        GenericVector,
+        genericText,
+        locationText,
+        buttonText,
+        buttonColor,
+    } = props
 
   return (
     <div className='bg-white border border-[#E0E0E0] border-solid rounded lg:max-w-[692px] max-w-full h-auto mb-4'>

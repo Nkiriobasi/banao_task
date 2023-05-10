@@ -2,20 +2,13 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 import DownArrow from '../assets/down_arrow_icon.png';
-import ArticleBg from '../assets/Article_bg.png';
-import SarthaKamra from '../assets/sarthak_kamra.png';
-import SarahWest from '../assets/sarah_west.png';
-import EducationBg from '../assets/education_bg.png';
-import MeetUpBg from '../assets/meetup_bg.png';
-import RonalJones from '../assets/ronal_jones.png';
-import CalenderVector from '../assets/calenderVector.png';
-import JobVector from '../assets/JobVector.png';
-import JosephGray from '../assets/joseph_gray.png';
 import DownArrowIcon from '../assets/down_arrow_icon.png';
 
-import Card from '../components/Card';
 import LocationEditField from './LocationEditField';
 import SignIn from './SignInModal';
+
+import { allPosts, articles, events, education, jobs } from './Iterables';
+
 
 
 const TabView = () => {
@@ -130,180 +123,43 @@ const TabView = () => {
         <div className="w-full relative">
             <div>
                 <div className={toggle === 1 ? 'block' : 'hidden'}>
-                    <Card 
-                        bgImg={ArticleBg} 
-                        contentType={'Article'}
-                        contentHeading={'What if famous brands had regular fonts? Meet RegulaBrands!'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarthaKamra}
-                        ownerName={'Sarthak Kamra'}
-                    />
-
-                    <Card 
-                        bgImg={EducationBg} 
-                        contentType={'Education'}
-                        contentHeading={'Tax Benefits for Investment under National Pension Scheme launched by Government'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarahWest}
-                        ownerName={'Sarah West'}
-                    />
-
-                    <Card 
-                        bgImg={MeetUpBg} 
-                        contentType={'Meetup'}
-                        contentHeading={'Finance & Investment Elite Social Mixer @Lujiazui'}
-                        GenericVector={CalenderVector}
-                        genericText={'Fri, 12 Oct, 2018'}
-                        locationText={'Ahmedabad, India'}
-                        buttonColor={'text-[#E56135]'}
-                        buttonText={'Visit Website'}
-                        ownerImg={RonalJones}
-                        ownerName={'Ronal Jones'}
-                    />
-
-                    <Card 
-                        contentType={'Job'}
-                        contentHeading={'Software Developer'}
-                        GenericVector={JobVector}
-                        genericText={'Innovaccer Analytics Private Ltd.'}
-                        locationText={'Noida, India'}
-                        buttonColor={'text-[#02B875]'}
-                        buttonText={'Apply on Timesjobs'}
-                        ownerImg={JosephGray}
-                        ownerName={'Joseph Gray'}
-                    />
+                    {allPosts.map((post) => {
+                        return (
+                            <div key={post.key}>{post}</div>
+                        )
+                    })}
                 </div>
 
                 <div className={toggle === 2 ? 'block' : 'hidden'}>
-                    <Card 
-                        bgImg={ArticleBg} 
-                        contentType={'Article'}
-                        contentHeading={'What if famous brands had regular fonts? Meet RegulaBrands!'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarthaKamra}
-                        ownerName={'Sarthak Kamra'}
-                    />
-                    <Card 
-                        bgImg={ArticleBg} 
-                        contentType={'Article'}
-                        contentHeading={'What if famous brands had regular fonts? Meet RegulaBrands!'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarthaKamra}
-                        ownerName={'Sarthak Kamra'}
-                    />
-                    <Card 
-                        bgImg={ArticleBg} 
-                        contentType={'Article'}
-                        contentHeading={'What if famous brands had regular fonts? Meet RegulaBrands!'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarthaKamra}
-                        ownerName={'Sarthak Kamra'}
-                    />
+                    {articles.map((article) => {
+                        return (
+                            <div key={article.key}>{article}</div>
+                        )
+                    })}
                 </div>
 
                 <div className={toggle === 3 ? 'block' : 'hidden'}>
-                    <Card 
-                        bgImg={MeetUpBg} 
-                        contentType={'Meetup'}
-                        contentHeading={'Finance & Investment Elite Social Mixer @Lujiazui'}
-                        GenericVector={CalenderVector}
-                        genericText={'Fri, 12 Oct, 2018'}
-                        locationText={'Ahmedabad, India'}
-                        buttonColor={'text-[#E56135]'}
-                        buttonText={'Visit Website'}
-                        ownerImg={RonalJones}
-                        ownerName={'Ronal Jones'}
-                    />
-                    <Card 
-                        bgImg={MeetUpBg} 
-                        contentType={'Meetup'}
-                        contentHeading={'Finance & Investment Elite Social Mixer @Lujiazui'}
-                        GenericVector={CalenderVector}
-                        genericText={'Fri, 12 Oct, 2018'}
-                        locationText={'Ahmedabad, India'}
-                        buttonColor={'text-[#E56135]'}
-                        buttonText={'Visit Website'}
-                        ownerImg={RonalJones}
-                        ownerName={'Ronal Jones'}
-                    />
-                    <Card 
-                        bgImg={MeetUpBg} 
-                        contentType={'Meetup'}
-                        contentHeading={'Finance & Investment Elite Social Mixer @Lujiazui'}
-                        GenericVector={CalenderVector}
-                        genericText={'Fri, 12 Oct, 2018'}
-                        locationText={'Ahmedabad, India'}
-                        buttonColor={'text-[#E56135]'}
-                        buttonText={'Visit Website'}
-                        ownerImg={RonalJones}
-                        ownerName={'Ronal Jones'}
-                    />
+                    {events.map((event) => {
+                        return (
+                            <div key={event.key}>{event}</div>
+                        )
+                    })}
                 </div>
 
                 <div className={toggle === 4 ? 'block' : 'hidden'}>
-                    <Card 
-                        bgImg={EducationBg} 
-                        contentType={'Education'}
-                        contentHeading={'Tax Benefits for Investment under National Pension Scheme launched by Government'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarahWest}
-                        ownerName={'Sarah West'}
-                    />
-                    <Card 
-                        bgImg={EducationBg} 
-                        contentType={'Education'}
-                        contentHeading={'Tax Benefits for Investment under National Pension Scheme launched by Government'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarahWest}
-                        ownerName={'Sarah West'}
-                    />
-
-                    <Card 
-                        bgImg={EducationBg} 
-                        contentType={'Education'}
-                        contentHeading={'Tax Benefits for Investment under National Pension Scheme launched by Government'}
-                        mainContent={'I’ve worked in UX for the better part of a decade. From now on, I plan to rei'}
-                        ownerImg={SarahWest}
-                        ownerName={'Sarah West'}
-                    />
+                    {education.map((edu) => {
+                        return (
+                            <div key={edu.key}>{edu}</div>
+                        )
+                    })}
                 </div>
 
                 <div className={toggle === 5 ? 'block' : 'hidden'}>
-                    <Card 
-                        contentType={'Job'}
-                        contentHeading={'Software Developer'}
-                        GenericVector={JobVector}
-                        genericText={'Innovaccer Analytics Private Ltd.'}
-                        locationText={'Noida, India'}
-                        buttonColor={'text-[#02B875]'}
-                        buttonText={'Apply on Timesjobs'}
-                        ownerImg={JosephGray}
-                        ownerName={'Joseph Gray'}
-                    />
-
-                    <Card 
-                        contentType={'Job'}
-                        contentHeading={'Software Developer'}
-                        GenericVector={JobVector}
-                        genericText={'Innovaccer Analytics Private Ltd.'}
-                        locationText={'Noida, India'}
-                        buttonColor={'text-[#02B875]'}
-                        buttonText={'Apply on Timesjobs'}
-                        ownerImg={JosephGray}
-                        ownerName={'Joseph Gray'}
-                    />
-
-                    <Card 
-                        contentType={'Job'}
-                        contentHeading={'Software Developer'}
-                        GenericVector={JobVector}
-                        genericText={'Innovaccer Analytics Private Ltd.'}
-                        locationText={'Noida, India'}
-                        buttonColor={'text-[#02B875]'}
-                        buttonText={'Apply on Timesjobs'}
-                        ownerImg={JosephGray}
-                        ownerName={'Joseph Gray'}
-                    />
+                    {jobs.map((job) => {
+                        return (
+                            <div key={job.key}>{job}</div>
+                        )
+                    })}
                 </div>
             </div>
 
